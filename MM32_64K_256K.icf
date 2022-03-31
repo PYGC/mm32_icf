@@ -25,7 +25,7 @@ define block HEAP   with alignment = 8, size = __HEAP_SIZE_   { };
 initialize by copy { readwrite };
 do not initialize  { section .noinit };
 
-place at address mem: __section_VECTOR_TABLE_BASE__ { readonly section .vector_table };
+place at address mem: __section_VECTOR_TABLE_BASE__ { readonly section .intvec };
 
 place in ROM_region   { readonly };
 place in RAM_region   { readwrite, block CSTACK, block HEAP };
